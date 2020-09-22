@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons+Outlined');
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700;900&display=swap');
+
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 380;
+}
+
+h1,h2,h3,h4,h5,h6 { font-family: 'Rubik', sans-serif !important; } 
+
+.container-fluid{
+    width: 85% !important;
+}
+.navbar {font-weight: 400;}
+
+.navbar img{
+    width: 13.5vmin;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #000;
+    font-size: 13px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #000;
+    font-size: 13px;
+}
+
+.navbar-dark .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    background: #f2f2f2;
+}
+
+.btnn{
+    color: #EC268F !important;
+    background-color: none;
+    border: 2px solid #EC268F;
+    padding: 9px 26px !important;
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.banner{
+    background-color: #FEF2F8;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.banner h1{
+    font-weight: bold;
+    text-align: right;
+    font-size: 6.2vmin;
+}
+
+.banner p{
+    color: #4d4d4d;
+    font-size: 2.5vmin;
+}
+.sub{
+    background-color: #F3F3F3;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dline{
+    border-bottom: 1px solid #F0F0F0;
+    width: 100%;
+    margin: 5px 0;
+}
+
+.uline {
+    border-bottom: 1px solid #F0F0F0;
+    width: 100%;
+    margin: 26px 0 35px 0;
+}
+
+.sec a, .sec1 a{
+    color: #000;
+    font-size: 14px;
+}
+
+.sec1 span{
+    color: #EC268F;
+    margin: 0 10px;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.lik{
+    font-weight: normal;
+    font-size: 12px !important;
+    margin-left: 20px;
+    color: #ec268f !important;    
+}
+
+footer{
+    display: flex;
+    height: 55vh;
+    background-color: #0F050A;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-weight: 300;
+    margin-top: 8vw;
+}
+
+footer a{
+    font-size: 13px;
+    color: #fff !important;
+}
+
+.x15{
+    font-size: 15px;
+    width: 41vmin;    
+}
+
+.mll{
+    margin-left: 4rem;
+}
+@media only screen and (max-width: 600px) {
+    .navbar img {
+        width: 18.5vmin;
+    }
+
+    .banner h1{
+        text-align: left;
+    }
+
+    .banner p {
+        font-size: 3.5vmin;
+    }
+
+    footer{
+        height: 75vh;
+    }    
+
+    .x15 {
+        width: 82vmin;
+    }
+    .mll{
+        margin-left: 0;
+    }
+}
