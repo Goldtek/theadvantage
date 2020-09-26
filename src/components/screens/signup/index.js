@@ -21,7 +21,6 @@ function SignUp(){
                                     <div class="logo">
                                         <Link to="/"><img src="images/logo.png" alt="image"/></Link>
                                     </div>
-
                                     <h3>Open up your Account now</h3>
                                     <p>Already signed up? <Link to="/login">Log in</Link></p>
 
