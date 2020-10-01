@@ -4,6 +4,8 @@ import Footer from "./footer";
 import Book from "./book";
 import CourseBanner from "./course-banner";
 import Course from "./course";
+import Package from "./package";
+import Pagination from './pagination';
 
 export {
     Banner,
@@ -12,4 +14,6 @@ export {
     Book,
     CourseBanner,
     Course,
+    Package,
+    Pagination,
 };

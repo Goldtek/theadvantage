@@ -5,32 +5,32 @@ import { Link } from 'react-router-dom';
 function SignUp(){
     return(
     
-        <section class="register-area">
-            <div class="row m-0">
-                <div class="col-lg-6 col-md-12 p-0">
-                    <div class="register-image">
+        <section className="register-area">
+            <div className="row m-0">
+                <div className="col-lg-6 col-md-12 p-0">
+                    <div className="register-image">
                         <img src="assets/img/mentor.png" alt="image"/>
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-12 p-0">
-                    <div class="register-content">
-                        <div class="d-table">
-                            <div class="d-table-cell">
-                                <div class="register-form">
-                                    <div class="logo">
+                <div className="col-lg-6 col-md-12 p-0">
+                    <div className="register-content">
+                        <div className="d-table">
+                            <div className="d-table-cell">
+                                <div className="register-form">
+                                    <div className="logo">
                                         <Link to="/"><img src="images/logo.png" alt="image"/></Link>
                                     </div>
                                     <h3>Open up your Account now</h3>
                                     <p>Already signed up? <Link to="/login">Log in</Link></p>
 
                                     <form>
-                                        <div class="form-group">
-                                            <input type="email" name="email" id="email" placeholder="Your email address" class="form-control"/>
+                                        <div className="form-group">
+                                            <input type="email" name="email" id="email" placeholder="Your email address" className="form-control"/>
                                         </div>
 
-                                        <div class="form-group">
-                                            <input type="password" name="password" id="password" placeholder="Create a password" class="form-control"/>
+                                        <div className="form-group">
+                                            <input type="password" name="password" id="password" placeholder="Create a password" className="form-control"/>
                                         </div>
 
                                         <button type="submit">Sign Up</button>

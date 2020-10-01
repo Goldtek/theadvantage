@@ -7,9 +7,13 @@ import {
   Login,
   // Error404Page,
   SignUp,
-  Coaching
+  Coaching,
+  Discovery,
+  Books,
+  BookDetail
  
 } from "./components/index";
+
 
 const Routes = () => {
   return (
@@ -29,14 +33,28 @@ const Routes = () => {
           <Login />
         </Route>
 
-        <Route path="/signup">
+        <Route exact path="/signup">
           <SignUp />
         </Route>
 
         
-        <Route path="/coaching">
+        <Route exact path="/coaching">
           <Coaching />
         </Route>
+
+        <Route exact path="/discovery">
+          <Discovery />
+        </Route>
+
+        <Route exact path="/books">
+          <Books />
+        </Route>
+
+        <Route exact path="/book/:id" component={BookDetail} />
+
+        {/* <Route path="/packages/vantage">
+          <Vantage />
+        </Route> */}
 
         {/* GENERAL ROUTE - NONE PROTECTED ############################################*/}
 

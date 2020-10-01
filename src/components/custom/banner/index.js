@@ -5,15 +5,15 @@ import Typewriter from 'typewriter-effect';
 export default class Bannner extends Component {
     render(){
         return(
-            <div class="banner">
-            <div class="container-fluid">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-5">
+            <div className="banner">
+            <div className="container-fluid">
+                <div className="row justify-content-center align-items-center">
+                    <div className="col-lg-5">
                         <h1>
                             LEARNING THAT CREATE IMPACT AND GROW YOU
                         </h1>
                     </div>
-                    <div class="col-lg-5">
+                    <div className="col-lg-5">
                         <p>
                             <Typewriter
                                 options={{

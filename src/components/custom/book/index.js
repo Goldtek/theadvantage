@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import './book.css';
 
 const Book = ({ title, source}) => (
-    <div class="col-lg-3">
-        <div class="h-100 mb-3">
+    <div className="col-lg-3">
+        <div className="h-100 mb-3">
             <Link href="#">
-                <img class="card-img-top img-size" src={source} alt=""/>
+                <img className="card-img-top img-size" src={source} alt=""/>
                 </Link>
-            <div class="card-body">
+            <div className="card-body">
                 <Link href="#">{title}</Link>
             </div>
         </div>

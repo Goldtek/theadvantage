@@ -1,10 +1,10 @@
 import React from 'react';
 
 const CourseBanner = () => (
-    <div class="sub">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-5 mr-auto mll">
+    <div className="sub">
+    <div className="container-fluid">
+        <div className="row">
+            <div className="col-lg-5 mr-auto mll">
                 <h3>
                     All Course to Success
                 </h3>

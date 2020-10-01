@@ -8,14 +8,14 @@ export default class Courses extends Component {
             <div>
                 <Header/>
                 <CourseBanner/> 
-                <div class="sec container-fluid my-5">
-                    <div class="row">
+                <div className="sec container-fluid my-5">
+                    <div className="row">
                         <h5>Courses</h5>  
-                        <div class="dline"/>
-                        <div class="row mt-5">
+                        <div className="dline"/>
+                        <div className="row mt-5">
                         <Course 
                                 userImg="http://placehold.it/700x450" 
-                                title="The Complete Communication Skills Master Class for Life"
+                                title="The Complete Communication Skills Master className for Life"
                                 name="Steve Brown"
                                 bookImg="images/courses/6.jpg"
                                 price="50"
@@ -24,7 +24,7 @@ export default class Courses extends Component {
                             />
                             <Course 
                                 userImg="http://placehold.it/700x450" 
-                                title="The Complete Communication Skills Master Class for Life"
+                                title="The Complete Communication Skills Master className for Life"
                                 name="Steve Brown"
                                 bookImg="images/courses/4.jpg"
                                 price="100"
@@ -34,7 +34,7 @@ export default class Courses extends Component {
 
                             <Course 
                                 userImg="http://placehold.it/700x450" 
-                                title="The Complete Communication Skills Master Class for Life"
+                                title="The Complete Communication Skills Master className for Life"
                                 name="Steve Brown"
                                 bookImg="images/courses/3.jpg"
                                 price="80"
@@ -44,7 +44,7 @@ export default class Courses extends Component {
 
                             <Course 
                                 userImg="http://placehold.it/700x450" 
-                                title="The Complete Communication Skills Master Class for Life"
+                                title="The Complete Communication Skills Master className for Life"
                                 name="Steve Brown"
                                 bookImg="images/courses/9.jpg"
                                 price="76"
@@ -54,7 +54,7 @@ export default class Courses extends Component {
 
                             <Course 
                                 userImg="http://placehold.it/700x450" 
-                                title="The Complete Communication Skills Master Class for Life"
+                                title="The Complete Communication Skills Master className for Life"
                                 name="Steve Brown"
                                 bookImg="images/courses/2.jpg"
                                 price="45"
@@ -64,7 +64,7 @@ export default class Courses extends Component {
 
                             <Course 
                                 userImg="http://placehold.it/700x450" 
-                                title="The Complete Communication Skills Master Class for Life"
+                                title="The Complete Communication Skills Master className for Life"
                                 name="Steve Brown"
                                 bookImg="images/courses/11.jpg"
                                 price="80"
@@ -74,7 +74,7 @@ export default class Courses extends Component {
 
                             <Course 
                                 userImg="http://placehold.it/700x450" 
-                                title="The Complete Communication Skills Master Class for Life"
+                                title="The Complete Communication Skills Master className for Life"
                                 name="Steve Brown"
                                 bookImg="images/courses/5.jpg"
                                 price="125"
@@ -84,7 +84,7 @@ export default class Courses extends Component {
 
                             <Course 
                                 userImg="http://placehold.it/700x450" 
-                                title="The Complete Communication Skills Master Class for Life"
+                                title="The Complete Communication Skills Master className for Life"
                                 name="Steve Brown"
                                 bookImg="images/courses/6.jpg"
                                 price="250"
