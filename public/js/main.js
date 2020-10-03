@@ -15,5 +15,6 @@
                 $('.accordion-title').not($(this)).removeClass('active');		
             });
         });
+
     });
 }(jQuery));

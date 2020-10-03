@@ -21,13 +21,13 @@ export default class Header extends Component {
                                 <Link className="nav-link" to="/">HOME</Link>
                             </li>
                             <li className="nav-item mr-3">
-                                <Link className="nav-link" to="/courses">COURSES</Link>
+                                <Link className="nav-link" to="/">FAQ</Link>
                             </li>
                             <li className="nav-item mr-3">
-                                <Link className="nav-link" to="/coaching">COACHING</Link>
+                                <Link className="nav-link" to="/">FORUM</Link>
                             </li>
                             <li className="nav-item mr-3">
-                                <Link className="nav-link" to="/books">BOOKS</Link>
+                                <Link className="nav-link" to="/">BLOG</Link>
                             </li>
                             <li className="nav-item mr-3">
                                 <Link className="nav-link" to="/login"><i className='bx bx-log-in'></i> LOGIN</Link>

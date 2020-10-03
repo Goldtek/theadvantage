@@ -5,11 +5,12 @@ import * as serviceWorker from './serviceWorker';
 import Routes from "./routes";
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { history } from './components/custom';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter forceRefresh={true}>
+      <BrowserRouter forceRefresh={true} history={history}>
         <Routes />
       </BrowserRouter>
     </Provider>

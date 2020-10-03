@@ -1,6 +1,6 @@
 import  React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Header, Banner, Footer, Book } from '../../custom';
+import { Header, Banner, Footer, Book,ExamBody } from '../../custom';
 
 export default class Home extends Component {
     render(){
@@ -9,7 +9,18 @@ export default class Home extends Component {
                 <Header/>
                 <Banner/> 
                 <div className="sec container-fluid my-5">
+                    
+                    <div className="row mb-30">
+                      <ExamBody path="images/jamb.png"/>
+                      <ExamBody path="images/neco.png"/>
+                      <ExamBody path="images/waec.png"/>
+                      <ExamBody path="images/gce.png"/>
+
+
+                    </div> 
+
                     <div className="row">
+
                         <h5>Courses <Link to="/courses" className="lik">View All</Link></h5>  
                         <div className="dline"/>
                         <div className="row mt-5">
@@ -20,14 +31,7 @@ export default class Home extends Component {
                         </div>
                     
                  
-                        <h5>Books <a href="course-all.html" className="lik">View All</a></h5>  
-                        <div className="dline"/>
-                        <div className="row mt-5">
-                            <Book source="images/courses/lap.jpg" title="Straight Business: for business managers & Leaders" />
-                            <Book source="images/courses/9.jpg" title="The Complete Communication Skills Master className for Life" />
-                            <Book source="images/courses/book.jpeg" title="The Complete Management Skills Certification Course" />
-                            <Book source="images/courses/16.jpg" title="Leadership: Practical Leadership Skills" />
-                        </div>
+                       
                     </div>
                 </div>
                 <Footer/>

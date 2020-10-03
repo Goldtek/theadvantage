@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import serializeForm from "form-serialize";
+import axios from 'axios';
 
+class Login extends React.Component{
 
-function Login(){
+    login = e => {
+        e.preventDefault();
+        const regValues = serializeForm(e.target, { hash: true });
+    }
+    render(){
     return(
         <section className="login-area">
         <div className="row m-0">
@@ -23,7 +30,7 @@ function Login(){
                                 </div>
 
                                 <h3>Welcome back</h3>
-                                <p>New to TheAdvantage? <Link to="/signup">Sign up</Link></p>
+                                <p>New to AfriLearn? <Link to="/signup">Sign up</Link></p>
 
                                 <form>
                                     <div className="form-group">
@@ -53,6 +60,7 @@ function Login(){
         </div>
     </section>
     )
+}
 }
 
 export default Login;
