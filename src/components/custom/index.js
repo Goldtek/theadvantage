@@ -2,19 +2,32 @@ import Banner from "./banner";
 import Header from "./header";
 import Footer from "./footer";
 import Book from "./book";
+import CourseBanner from "./course-banner";
 import Course from "./course";
-import ExamBody from "./exam";
+import Package from "./package";
+import Pagination from './pagination';
 import history from './history';
-
-
+import DashboardBanner from "./dashboard-banner";
+import PrivateRoute from './private';
+import VantagePackage from './vantagePackage';
+import CourseDetail from './course-detail';
+import ActualBook from './actual-book';
+import ExecutivePackage from './executivePackage';
 
 export {
     Banner,
     Footer,
     Header,
     Book,
+    CourseBanner,
     Course,
+    Package,
+    Pagination,
     history,
-    ExamBody,
-    
+    DashboardBanner,
+    PrivateRoute,
+    VantagePackage,
+    CourseDetail,
+    ActualBook,
+    ExecutivePackage
 };

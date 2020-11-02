@@ -8,18 +8,23 @@ export default class Bannner extends Component {
             <div className="banner">
             <div className="container-fluid">
                 <div className="row justify-content-center align-items-center">
-                    <div className="col-lg-8">
+                    <div className="col-lg-5">
                         <h1>
-                        <Typewriter
+                            LEARNING THAT CREATE IMPACT AND GROW YOU
+                        </h1>
+                    </div>
+                    <div className="col-lg-5">
+                        <p>
+                            <Typewriter
                                 options={{
-                                    strings: ['What would you love to learn?',],
+                                    strings: ['we offer trainings in a number of other areas.', ' Our main focus is always on developing and creating value for you and your workplace.'],
                                     autoStart: true,
                                     loop: true,
                                 }}
                             />
-                        </h1>
+                            
+                        </p>
                     </div>
-                   
                 </div>
             </div>
         </div>

@@ -1,0 +1,27 @@
+.img-size {
+  height: 216.5px;
+  width: 337px;
+}
+
+.title > a {
+  color: #000;
+
+}
+
+
+.title > a:hover{
+  text-decoration: none;
+  color: #000;
+}
+
+.card-body > span {
+  cursor: pointer;
+}
+
+.pyu{
+  cursor: pointer;
+}
+
+.mr {
+  margin-right: 40px !important;
+}

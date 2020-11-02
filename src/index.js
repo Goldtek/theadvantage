@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import * as serviceWorker from './serviceWorker';
 import Routes from "./routes";
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import { PersistGate } from 'redux-persist/integration/react';
+import { store,persistor } from "./redux/store";
 import { history } from './components/custom';
+
 
 const App = () => {
   return (
     <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}></PersistGate>
       <BrowserRouter forceRefresh={true} history={history}>
         <Routes />
       </BrowserRouter>

@@ -1,15 +1,15 @@
 import React from 'react';
 
-const CourseBanner = () => (
+const CourseBanner = ({title,subTitle}) => (
     <div className="sub">
     <div className="container-fluid">
         <div className="row">
-            <div className="col-lg-5 mr-auto mll">
-                <h3>
-                    All Course to Success
-                </h3>
+            <div className="col-lg-10 mr-auto mll">
+                <h4>
+                   {title}
+                </h4>
                 <p>
-                    we offer courses in a number of other areas. Our main focus is always on developing and creating value for you and your workplace.
+                   {subTitle}
                 </p>
             </div>
         </div>

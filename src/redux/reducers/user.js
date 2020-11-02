@@ -5,7 +5,7 @@ import {
   const initialState = {
     user: {},
     errorMessage: '',
-    isAuthenticated: false,
+    isAuthenticated: true,
   };
   
   const UserReducer = (state = initialState, action) => {
@@ -16,8 +16,7 @@ import {
           ...state,
           loading: false,
           isAuthenticated: true,
-          user: action.response.user,
-          token: action.response.token,
+          user: action.user,
         };
 
       case STORE_USER_ERROR_MSG:
