@@ -1,6 +1,8 @@
 import React,{ useState } from 'react';
 import { Link,useHistory } from 'react-router-dom';
 import serializeForm from "form-serialize";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import swal from 'sweetalert';
 import { auth,firestore }  from '../../custom/firebase';
 
@@ -14,34 +16,44 @@ const SignUp = () => {
         e.preventDefault();
         setLoading(true);
         const regValues = serializeForm(e.target, { hash: true });
-        const { email,password,name,phone } = regValues;
+        const { email,password,name, re_password } = regValues;
         try{
             if (email.trim() == "") {
                 alert("Enter Email");
-            } else if (password.trim().length < 7) {
-                alert("Password must be at least 7 characters");
+            } else if(password !== re_password){
+                    // alert error
+                
             } else {
                 console.log('password==>',password);
-                const reg = auth.createUserWithEmailAndPassword(email, password);
-                const uid = reg.user._user.uid;
-                console.log('reg', reg);
+                const reg = await auth.createUserWithEmailAndPassword(email, password);
+                const uid = reg.user.uid;
                 await firestore.collection("users").doc(uid).set({
                     email,
                     name,
-                    phone,
                 });
                 setRegsuccess(true);
-              //  swal("Good job!", "Your Account Has been successfully registered.", "success")
-                // .then((value) => {
-                //     history.push('/login');
-                //   });
-              //  
-             //   return
-            
+                toast.success("Your acount has been successfully registered", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
+                history.push('/login');
             }
         }catch(error){
             console.log(error);
-            swal("Error",error.code, "error");
+            toast.error(`${error}`, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+              });
         }
     }
  
@@ -61,7 +73,7 @@ const SignUp = () => {
                                 <input type="email" class="form-input" required name="email" id="email" placeholder="Your Email"/>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-input" required name="password" id="password" placeholder="Password"/>
+                                <input type="password" class="form-input" required name="password" id="password" placeholder="Password"/>
                                 <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                             </div>
                             <div class="form-group">
@@ -81,6 +93,7 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </section>
        );
 
