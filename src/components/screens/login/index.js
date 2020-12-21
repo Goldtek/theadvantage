@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import serializeForm from "form-serialize";
 import { useDispatch } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { auth,firestore }  from '../../custom/firebase';
 
 
 function Login(){
     const [loading,setLoading] = useState(false);
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -19,13 +19,32 @@ function Login(){
         const { email, password } = regValues;
         
         try{
-          const res = await auth.signInWithEmailAndPassword(email, password);
-          const { user } = res;
-        //  return console.log('user-->',user)
-          dispatch({ type: 'LOGIN_SUCCESS', user });
-           return history.push('/dashboard');
+        const res = await auth.signInWithEmailAndPassword(email, password);
+        // use the uid and fetch the user
+        const { user: { uid } } = res;
+        console.log('user-->',uid)
+        const user = await firestore.collection('users').doc(uid).get();
+        dispatch({ type: 'LOGIN_SUCCESS', user });
+        toast.success("Login Successful", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+          });
+        return history.push('/dashboard');
         } catch(error){
-            console.log(error);
+            toast.error(`${error}`, {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+              });
         }
 
     }
@@ -57,6 +76,7 @@ function Login(){
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </section>
     )
 }
