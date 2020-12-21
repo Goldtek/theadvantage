@@ -20,7 +20,15 @@ const SignUp = () => {
             if (email.trim() == "") {
                 alert("Enter Email");
             } else if(password !== re_password){
-                    // alert error
+                toast.error("The password doesn't match!!!", {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                  });
                 
             } else {
                 console.log('password==>',password);
@@ -29,6 +37,7 @@ const SignUp = () => {
                 await firestore.collection("users").doc(uid).set({
                     email,
                     name,
+                    id: uid,
                 });
                 setRegsuccess(true);
                 toast.success("Your acount has been successfully registered", {
@@ -43,7 +52,6 @@ const SignUp = () => {
                 history.push('/login');
             }
         }catch(error){
-            console.log(error);
             toast.error(`${error}`, {
                 position: "top-right",
                 autoClose: 5000,
