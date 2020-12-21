@@ -66,6 +66,12 @@ const Header = () => {
                                                     <li className="nav-item">
                                                         <Link to="/events">Events</Link>
                                                     </li>
+                                                    <li className="nav-item">
+                                                        <Link to="/login">Login</Link>
+                                                    </li>
+                                                    <li className="nav-item">
+                                                        <Link to="/signup">Register</Link>
+                                                    </li>
                                                 </Fragment>
                                             ) : (
                                                 <li className="nav-item">

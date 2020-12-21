@@ -6,7 +6,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 
     const user = useSelector(state => state.User);
     const { isAuthenticated } = user;
-
+   // return console.log('isAuthenticated', isAuthenticated)
     return (
         <Route
         {...rest}

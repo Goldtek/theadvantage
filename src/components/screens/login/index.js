@@ -22,8 +22,8 @@ function Login(){
         const res = await auth.signInWithEmailAndPassword(email, password);
         // use the uid and fetch the user
         const { user: { uid } } = res;
-        console.log('user-->',uid)
-        const user = await firestore.collection('users').doc(uid).get();
+        const doc = await firestore.collection('users').doc(uid).get();
+        const user = doc.data();
         dispatch({ type: 'LOGIN_SUCCESS', user });
         toast.success("Login Successful", {
             position: "top-right",

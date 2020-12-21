@@ -13,6 +13,8 @@ import {
     switch (action.type) {
 
       case LOGIN_SUCCESS:
+
+      console.log('action', action)
         return {
           ...state,
           loading: false,
