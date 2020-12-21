@@ -1,5 +1,7 @@
 import  React from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useHistory} from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addItemToCart} from '../../actions/cart'
 import { Header, Footer, VantagePackage } from '../../custom';
 
 
@@ -7,7 +9,20 @@ function Vantage(){
     const thingsTolearn = ['How to write a purpose statement','How to Write A Purpose Statement',
     'How to Create a Purpose Checklist','Discovering the Power of Self-Believe','How to use the Power of Vision',
     'Understand your success Traits', 'Learn to Speak with Power','How to align your emotional intelligence for success'];
-   const sections={};
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const  add = cartItem => {
+        try{
+             dispatch(addItemToCart(cartItem));
+             history.push('/cart')
+         
+        } catch(error){
+            console.log(error);
+        }
+
+    }
+
         return(
             <div>
                 <Header/>
@@ -42,7 +57,7 @@ function Vantage(){
                                             – One-on-one coaching<br/>
                                             – 360⁰ Life Assessment Program 
                                         </p>
-                                        <a href="cart.html" class="main-btn-3 my-3">Add To Cart</a>
+                                        <button onClick={() => add({ image:'images/2.png', quantity: 1, price: 1250, name: "Vantage", id:"34ffrj4jdk" })} class="main-btn-3 my-3">Add To Cart</button>
                                     </div>
                                 </div>
 

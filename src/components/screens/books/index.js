@@ -68,10 +68,10 @@ function Books(){
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="shop-grid" role="tabpanel" aria-labelledby="shop-grid-tab">
                                 <div class="row justify-content-center">
-                                <Book source="images/bk1.jpg" author="Yemi Akinwuntan" price={200} oldPrice={250} title="Purpose" quantity={1} />
-                                <Book source="images/bk.jpg" author="Yemi Akinwuntan" price={150} oldPrice={250} title="Straight Business" quantity={1} />
-                                <Book source="images/p-3.jpg" author="Scott Trench" price={100} oldPrice={200} title="There were none" quantity={1}  />
-                                <Book source="images/p-3.jpg" author="Scott Trench" price={200} oldPrice={250} title="The Stranded" quantity={1}  />
+                                <Book source="images/bk1.jpg" author="Yemi Akinwuntan" price={200} oldPrice={250} title="Purpose" quantity={1} id="ghlkflglty" />
+                                <Book source="images/bk.jpg" author="Yemi Akinwuntan" price={150} oldPrice={250} title="Straight Business" quantity={1} id="3eoororo"/>
+                                <Book source="images/p-3.jpg" author="Scott Trench" price={100} oldPrice={200} title="There were none" quantity={1} id="34tyu500o0"  />
+                                <Book source="images/p-3.jpg" author="Scott Trench" price={200} oldPrice={250} title="The Stranded" quantity={1} id="52soe5dmgm6"  />
                                 
                                 </div> 
                             </div>

@@ -1,12 +1,26 @@
 import  React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { Header, Footer, Package } from '../../custom';
+import { addItemToCart} from '../../actions/cart'
 
 
 function Discovery(){
     const thingsTolearn = ['What is Purpose','How to Write A Purpose Statement',
     'How to Create a Purpose Checklist','Discovering the Power of Self-Believe','How to use the Power of Vision'];
-   const sections={};
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const  add = cartItem => {
+        try{
+             dispatch(addItemToCart(cartItem));
+             history.push('/cart')
+         
+        } catch(error){
+            console.log(error);
+        }
+
+    }
+
         return(
             <div>
                 <Header/>
@@ -36,7 +50,7 @@ function Discovery(){
                                             – Purpose Discovery Sessions<br/>
                                             – Purpose Activation Program<br/>
                                         </p>
-                                        <Link to="cart.html" class="main-btn-3 my-3">Add To Cart</Link>
+                                        <button onClick={() => add({ image:'images/1.jpg', quantity: 1, price: 250, name: "Discovery", id:"3560j4jdk" })} class="main-btn-3 my-3">Add To Cart</button>
                                     </div>
                                 </div>
 
