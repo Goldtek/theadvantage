@@ -3,7 +3,7 @@ import { Link,useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import './book.css';
 
-const Book = ({ title, source,id,quantity}) => {
+const Book = ({ title, source,id,quantity, author, oldPrice, price}) => {
     const dispatch = useDispatch();
     const history = useHistory();
 
@@ -13,16 +13,32 @@ const Book = ({ title, source,id,quantity}) => {
     }
 
     return (
-        <div className="col-lg-3">
-            <div className="h-100 mb-3">
-                <span className='pyu' onClick={()=> viewCourse({price:500, name:title,  level:'Introductory', duration:8, numOfVideo:5, numOfLessons:13,  videos:10, Image: source,id,quantity })}>
-                    <img className="card-img-top img-size" src={source} alt=""/>
-                    </span>
-                <div className="card-body title">
-                    <span  onClick={()=> viewCourse({price:500, name:title,  level:'Introductory', duration:8, numOfVideo:5, numOfLessons:13,  videos:10, Image: source,id,quantity })}>{title}</span>
-                </div>
-            </div>
-        </div>
+        <div class="col-lg-3 col-md-6 col-sm-8">
+                            <div class="single-publication mt-30 text-center">
+                                <div class="image">
+                                    <img src={source} alt="Publication" />
+                                    <div class="add-cart">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="content pt-20">
+                                    <h5 class="book-title"><a href="#">{title} </a></h5>
+                                    <p class="writer-name"><span>By</span> {author} </p>
+                                    <div class="price-btn d-flex align-items-center justify-content-between">
+                                        <div class="price pt-20">
+                                            <span class="discount-price">${oldPrice}</span>
+                                            <span class="normal-price">${price}</span>
+                                        </div>
+                                        <div class="button pt-10">
+                                            <Link to="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</Link>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
     );
 }
 

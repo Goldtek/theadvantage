@@ -16,7 +16,7 @@ function Cart({items, totalPrice}){
     return(
         <Fragment>
             <Header bg=''/>
-            <div className="dline1"></div>
+            {/* <div className="dline1"></div>
             <div className="sec container-fluid my-5 ">
             <div className="row">
                 
@@ -43,7 +43,7 @@ function Cart({items, totalPrice}){
                                         <th><img className="img-fluid " src={item.image} alt=""/></th>
                                         <td>
                                             <h6>{item.name}</h6>
-                                            <a onClick={()=>dispatch(removeItemFromCart(item))} className='colorless cursor'><span>Remove</span></a> 
+                                            <a onClick={()=>dispatch(removeItemFromCart(item))} className='colorless cursor'><span>Remove</span></Link> 
                                         </td>
                                         <td style={{alignItems: 'center'}}><h6>{item.quantity}</h6></td>
                                         <td><h6>${item.price} </h6></td>
@@ -83,7 +83,73 @@ function Cart({items, totalPrice}){
                     </div>
              </div> }
                 </div>
-            </div>
+            </div> */}
+
+        <section class=" pt-105 pb-120 gray-bg">
+                <div class="container">
+                    <div class="col-md-12 mx-auto">
+                        <div class="cover">
+
+                            <div class="table-responsive">
+                            <table class="table table-borderless">
+                                <thead>
+                                <tr>
+                                    <th scope="col"></th>
+                                    <th scope="col">Items</th>
+                                    <th scope="col">Product</th>
+                                    <th scope="col">Unit Price</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Subtotal</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                               {items.map((item) => ( 
+                                <tr>
+                                    <th class="align-middle">
+                                        <Link to="#"><i class="fa fa-times"></i></Link>
+                                    </th>
+                                    <th><img class="img-fluid" src={item.image} alt="" /></th>
+                                    <td class="align-middle">
+                                        <p>{item.name}</p>
+                                    </td>
+                                    <td class="align-middle"><p>${item.price} </p></td>
+                                    <td><input type="number" class="w50" name="" value="1"/></td>
+                                    <td class="align-middle"><p>$ {item.price * item.quantity} </p></td>
+                                </tr>
+                                ))} 
+                                </tbody>
+                            </table>                   
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-5 mt-5 ml-auto">
+                        <div class="cover1">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <b>Subtotal:</b> 
+                                    <span class="float-right">${totalPrice}</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Shipping</b>
+                                    <span class="float-right">Free Shipping</span>                   
+                                </li>
+                                <li class="list-group-item">
+                                    <b>Total:</b>
+                                    <b class="float-right">${totalPrice}</b>
+                                </li>
+                                <li class="list-group-item">
+                                    <Link to="/checkout" class="main-btn w-100">Proceed Checkout</Link>
+                                </li>
+
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <Footer/>
 
         </Fragment>

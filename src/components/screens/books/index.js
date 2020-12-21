@@ -1,6 +1,6 @@
 import  React,{ useState, useEffect, Fragment } from 'react';
 import { Link,useHistory } from 'react-router-dom';
-import { Header, Footer, Pagination } from '../../custom';
+import { Header, Footer, CourseBanner, Pagination, Book } from '../../custom';
 import { useDispatch } from 'react-redux';
 
 
@@ -33,65 +33,222 @@ function Books(){
   
         return(
             <div>
-                <Header/>
-                   
-                    <div className="sub">
-                        <div className="container-fluid">
-                            <div className="row">
-                                <div className="col-lg-5 mr-auto mll">
-                                    <h3>
-                                        All Book Avaliable
-                                    </h3>
-                                    <p>
-                                        we offer courses in a number of other areas. Our main focus is always on developing and creating value for you and your workplace.
-                                    </p>
+                <Header/> 
+                <CourseBanner title="Books" image="images/ban2.jpg" />  
+                <section id="shop-page" class="pt-120 pb-120 gray-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="shop-top-search">
+                                    <div class="shop-bar">
+                                        <ul class="nav" id="myTab" role="tablist">
+                                            <li class="nav-item">
+                                                <Link  class="active" id="shop-grid-tab" data-toggle="tab" href="#shop-grid" role="tab" aria-controls="shop-grid" aria-selected="true"><i class="fa fa-th-large"></i></Link >
+                                            </li>
+                                            <li class="nav-item">
+                                                <Link  id="shop-list-tab" data-toggle="tab" href="#shop-list" role="tab" aria-controls="shop-list" aria-selected="false"><i class="fa fa-th-list"></i></Link >
+                                            </li>
+                                            <li class="nav-item">Showing 4 0f 24 Results</li>
+                                        </ul>
+                                    </div>
+                                    <div class="shop-select">
+                                        <select>
+                                            <option value="1">Sort by</option>
+                                            <option value="1">Sort by 01</option>
+                                            <option value="2">Sort by 02</option>
+                                            <option value="3">Sort by 03</option>
+                                            <option value="4">Sort by 04</option>
+                                            <option value="5">Sort by 05</option>
+                                        </select>
+                                    </div> 
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        </div> 
 
-
-                    <div className="sec1 container-fluid my-5">
-                        <div className="row">
-
-                            <div className="col-lg-3">
-                                <h5>Category</h5>
-                                <p>
-                                    <a href="#"><i className="fa fa-chevron-right mcol"></i> Business</a><br/>
-                                    <a href="#"><i className="fa fa-chevron-right mcol"></i> Managemnet</a><br/>
-                                    <a href="#"><i className="fa fa-chevron-right mcol"></i> Leadership</a><br/>
-                                </p>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="shop-grid" role="tabpanel" aria-labelledby="shop-grid-tab">
+                                <div class="row justify-content-center">
+                                <Book source="images/bk1.jpg" author="Yemi Akinwuntan" price={200} oldPrice={250} title="Purpose" quantity={1} />
+                                <Book source="images/bk.jpg" author="Yemi Akinwuntan" price={150} oldPrice={250} title="Straight Business" quantity={1} />
+                                <Book source="images/p-3.jpg" author="Scott Trench" price={100} oldPrice={200} title="There were none" quantity={1}  />
+                                <Book source="images/p-3.jpg" author="Scott Trench" price={200} oldPrice={250} title="The Stranded" quantity={1}  />
+                                
+                                </div> 
                             </div>
-                            <div className="col-lg-9">
-
-                            {currBooks.map((book,index)=>(
-                                <Fragment>
-                                    <div className="row align-items-center">
-                                        <div className="col-lg-4">
-                                            <img className="img-fluid rounded mb-4" src={book.image} alt=""/>
-                                        </div>
-                                        <div className="col-lg-7">
-                                            <span onClick={()=>addbook({title:book.title,image:book.image,description:book.description,author:book.author,price:book.price,id:book.id})}><h6>{book.title}</h6></span>
-                                            <b>BY:</b> {book.author}
-                                            <p>{book.description}</p>
-                                            <p>
-                                                <span>Hardcopy</span>
-                                                <span>E-Book</span>
-                                            </p>
-                                        </div>
+                            <div class="tab-pane fade" id="shop-list" role="tabpanel" aria-labelledby="shop-list-tab">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="single-publication mt-30">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="image">
+                                                        <img src="images/p-3.jpg" alt="Publication" />
+                                                        <div class="add-cart">
+                                                            <ul>
+                                                                <li><Link  href="#"><i class="fa fa-shopping-cart"></i></Link ></li>
+                                                                <li><Link  href="#"><i class="fa fa-heart-o"></i></Link ></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="content pt-20">
+                                                        <h5 class="book-title"><Link  href="#">Stones The Road </Link ></h5>
+                                                        <p class="writer-name"><span>By</span> Scott Trench</p>
+                                                        <div class="description">
+                                                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                                                        </div>
+                                                        <div class="price-btn d-flex align-items-center justify-content-between">
+                                                            <div class="price pt-20">
+                                                                <span class="normal-price">$200</span>
+                                                                <span class="discount-price">$250</span>
+                                                            </div>
+                                                            <div class="button pt-10">
+                                                                <Link  href="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</Link >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
                                     </div>
-
-                                    <div className="uline"></div>
-                                </Fragment>
-                            ))}
+                                    <div class="col-lg-6">
+                                        <div class="single-publication mt-30">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="image">
+                                                        <img src="images/p-3.jpg" alt="Publication" />
+                                                        <div class="add-cart">
+                                                            <ul>
+                                                                <li><Link  href="#"><i class="fa fa-shopping-cart"></i></Link ></li>
+                                                                <li><Link  href="#"><i class="fa fa-heart-o"></i></Link ></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="content pt-20">
+                                                        <h5 class="book-title"><Link  href="#">The Stranded </Link ></h5>
+                                                        <p class="writer-name"><span>By</span> Scott Trench</p>
+                                                        <div class="description">
+                                                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                                                        </div>
+                                                        <div class="price-btn d-flex align-items-center justify-content-between">
+                                                            <div class="price pt-20">
+                                                                <span class="discount-price">$250</span>
+                                                                <span class="normal-price">$200</span>
+                                                            </div>
+                                                            <div class="button pt-10">
+                                                                <Link  href="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</Link >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="single-publication mt-30">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="image">
+                                                        <img src="images/p-3.jpg" alt="Publication" />
+                                                        <div class="add-cart">
+                                                            <ul>
+                                                                <li><Link  href="#"><i class="fa fa-shopping-cart"></i></Link ></li>
+                                                                <li><Link  href="#"><i class="fa fa-heart-o"></i></Link ></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="content pt-20">
+                                                        <h5 class="book-title"><Link  href="#">The Sicario </Link ></h5>
+                                                        <p class="writer-name"><span>By</span> Scott Trench</p>
+                                                        <div class="description">
+                                                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                                                        </div>
+                                                        <div class="price-btn d-flex align-items-center justify-content-between">
+                                                            <div class="price pt-20">
+                                                                <span class="discount-price">$250</span>
+                                                                <span class="normal-price">$200</span>
+                                                            </div>
+                                                            <div class="button pt-10">
+                                                                <Link  href="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</Link >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="single-publication mt-30">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="image">
+                                                        <img src="images/p-3.jpg" alt="Publication" />
+                                                        <div class="add-cart">
+                                                            <ul>
+                                                                <li><Link  href="#"><i class="fa fa-shopping-cart"></i></Link ></li>
+                                                                <li><Link  href="#"><i class="fa fa-heart-o"></i></Link ></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <div class="content pt-20">
+                                                        <h5 class="book-title"><Link  href="#">There Were None </Link ></h5>
+                                                        <p class="writer-name"><span>By</span> Scott Trench</p>
+                                                        <div class="description">
+                                                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                                                        </div>
+                                                        <div class="price-btn d-flex align-items-center justify-content-between">
+                                                            <div class="price pt-20">
+                                                                <span class="discount-price">$250</span>
+                                                                <span class="normal-price">$200</span>
+                                                            </div>
+                                                            <div class="button pt-10">
+                                                                <Link  href="#" class="main-btn"><i class="fa fa-cart-plus"></i> Buy Now</Link >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </div> 
+                                    </div>
+                                </div> 
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <nav class="courses-pagination mt-50">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item">
+                                            <Link  href="#" aria-label="Previous">
+                                                <i class="fa fa-angle-left"></i>
+                                            </Link >
+                                        </li>
+                                        <li class="page-item"><Link  class="active" href="#">1</Link ></li>
+                                        <li class="page-item"><Link  href="#">2</Link ></li>
+                                        <li class="page-item"><Link  href="#">3</Link ></li>
+                                        <li class="page-item">
+                                            <Link  href="#" aria-label="Next">
+                                                <i class="fa fa-angle-right"></i>
+                                            </Link >
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
-                        <Pagination
+                    </div> 
+                </section>
+                        {/* <Pagination
                             PerPage={booksPerPage}
                             total={books.length}
                             paginate={paginate}
-                        />
-                    </div>
+                        /> */}
+                    
                 <Footer/>
             </div>
         );

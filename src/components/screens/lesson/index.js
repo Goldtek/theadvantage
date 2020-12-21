@@ -14,13 +14,13 @@ function Lesson(){
     const [screenTitle, setscreenTitle] = useState('');
     const history =  useHistory();
 
-    useEffect(()=>{
-        auth.onAuthStateChanged(async (user)=>{
-            if(!user){
-                history.push('/');
-            }
-        });
-    },[]);
+    // useEffect(()=>{
+    //     auth.onAuthStateChanged(async (user)=>{
+    //         if(!user){
+    //             history.push('/');
+    //         }
+    //     });
+    // },[]);
 
     const handleClick = (urlContent,isVideo) => {
         if (isVideo) {

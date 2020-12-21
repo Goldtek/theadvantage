@@ -1,3 +1,4 @@
+import { ToggleRadioButtonUnchecked } from 'material-ui/svg-icons';
 import {
      LOG_OUT, LOGIN_SUCCESS, STORE_USER_ERROR_MSG
   } from '../../components/actions/types';
@@ -5,7 +6,7 @@ import {
   const initialState = {
     user: {},
     errorMessage: '',
-    isAuthenticated: true,
+    isAuthenticated: false,
   };
   
   const UserReducer = (state = initialState, action) => {

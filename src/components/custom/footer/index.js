@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
 import './style.css';
@@ -7,88 +7,76 @@ import './style.css';
 export default class Footer extends Component {
     render(){
         return(
-            <Fragment>
-                <footer>
-                <div class="container-fluid">
-                    <div class="row footlg align-items-center">
-                        <div class="col-lg-6 mb-3">
-                            <div>
-                                <img src="./images/logo1.png" alt="logo"/>
+            <footer id="footer-part">
+            <div className="footer-top pt-40 pb-70">
+                <div className="container py-4">
+                    <div className="row">
+                        <div className="col-lg-6 col-md-6">
+                            <div className="footer-about mt-40">
+                                <div className="logo">
+                                <Link to="#"><img src="images/logo1.png" alt="Logo" width="90" /></Link>
+                                </div>
+                                <p style={{ width: '77%' }}>
+                                        Advantage Network is a consulting company
+                                        that helps individuals and organizations
+                                        achieve more. 
+                                </p>
+    
+                            </div> 
+                        </div>
+    
+                        <div className="col-lg-3 col-md-6 col-sm-6">
+                            <div className="footer-link support mt-40">
+                                <div className="footer-title pb-10">
+                                    <h6>Support</h6>
+                                </div>
+                                <p className="text-white mb-30">
+                                    Yemi Akinwunta<br/>
+                                    yemi@theadvantage.net
+                                </p>
+    
+                                <div className="footer-title pb-10">
+                                    <h6>Service</h6>
+                                </div>
+                                <p className="text-white">
+                                    Customer Service<br/>
+                                    service@theadvantage.net
+                                </p>
                             </div>
-                            
                         </div>
-                        <div class="col-lg-6 mb-3r">
-                            <ul class="nav ">
-                                <li class="nav-item">
-                                <a class="nav-link" href="#">HOME</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="#">ABOUT</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="#">SERVICES</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="#">COACHING</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="#">EVENT</a>
-                                </li>
-                                <li class="nav-item">
-                                <a class="nav-link" href="#">CONTACT</a>
-                                </li>
-                            </ul>
+                        <div className="col-lg-3 col-md-6">
+                            <div className="footer-address mt-40">
+                                <div className="footer-title pb-10">
+                                    <h6>Follow Us</h6>
+                                </div>
+                                <p>
+                                    <Link to="#"><i className="fa fa-2x fa-facebook-square mr-2"></i></Link>
+                                    <Link to="#"><i className="fa fa-2x fa fa-twitter mr-2"></i></Link>
+                                    <Link to="#"><i className="fa fa-2x fa-instagram"></i></Link>
+                                </p>
+                            </div> 
                         </div>
-                    </div>
-        
-                    <div class="bline mb-5"></div>
-        
-                    <div class="row mb-c justify-content-center">
-                
-                        <div class="col-lg-6 mb-3">
-                            <p>
-                                Advantage Network is a consulting company<br/>
-                                that helps individuals and organizations<br/>
-                                achieve more.
-                            </p>
+                    </div> 
+                </div> 
+            </div> 
+            
+            <div className="footer-copyright pt-10 pb-25">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-8">
+                            <div className="copyright text-md-left text-center pt-15">
+                                <p>&copy; 2020 The Advantage. All rights Reserved  </p>
+                            </div>
                         </div>
-                        <div class="col-lg-3 mb-3">
-                            <h4>Book Information</h4>
-                            <p>
-                                Yemi Akinwunta<br/>
-                                yemi@theadvantage.net<br/>
-                            </p>
-        
-                            <h4>Service</h4>
-                            <p>
-                                Customer Service<br/>
-                                service@theadvantage.net<br/>
-                            </p>
+                        <div className="col-md-4">
+                            <div className="copyright text-md-right text-center pt-15">
+                                <p>&copy; 2020</p>
+                            </div>
                         </div>
-                        <div class="col-lg-3 mb-3">
-                            <h4>Follow Us</h4>
-                            <p>
-                                <a href="https://www.facebook.com/advantagelive" target="_blank"><i className="bx bxl-facebook-square fa-2x mr-2"></i></a>
-                                <a href="https://www.youtube.com/u/advantagelive" target="_blank"><i class="bx fa-2x bxl-youtube mr-2"></i></a>
-                                <a href="https://www.instagram.com/advantagelive" target="_blank"><i class="bx fa-2x bxl-instagram"></i></a>
-                            </p>
-                        </div>
-        
-                    </div>
-        
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <small>Copyright The Advantage. All rights Reserved</small>
-                        </div>
-                        <div class="col-lg-2">
-                            <small>© 2020</small>
-                        </div>
-                    </div>
-        
-        
-                </div>
-            </footer>
-        </Fragment>
+                    </div> 
+                </div> 
+            </div> 
+        </footer>
         );
     }
 }

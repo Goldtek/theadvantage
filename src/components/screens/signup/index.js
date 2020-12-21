@@ -9,6 +9,7 @@ const SignUp = () => {
     const [regSuccess,setRegsuccess] = useState(false);
     const history = useHistory();
 
+
    const register = async(e) => {
         e.preventDefault();
         setLoading(true);
@@ -21,12 +22,10 @@ const SignUp = () => {
                 alert("Password must be at least 7 characters");
             } else {
                 console.log('password==>',password);
-               const reg = auth.createUserWithEmailAndPassword(email, password);
-              //check
-            //    if(reg.code == 400){
-            //        return swal("Error",'The account details has already been registered.', "error");
-            //    }
-                await firestore.collection("users").add({
+                const reg = auth.createUserWithEmailAndPassword(email, password);
+                const uid = reg.user._user.uid;
+                console.log('reg', reg);
+                await firestore.collection("users").doc(uid).set({
                     email,
                     name,
                     phone,
@@ -47,53 +46,43 @@ const SignUp = () => {
     }
  
     return(
-    
-        <section className="register-area">
-            <div className="row m-0">
-                <div className="col-lg-7 col-md-12 p-0">
-                    <div className="register-image">
-                        <img src="assets/img/mentor.jpg" alt="image"/>
-                    </div>
-                </div>
+        
 
-                <div className="col-lg-5 col-md-12 p-0">
-                    <div className="register-content">
-                        <div className="d-table">
-                            <div className="d-table-cell">
-                                <div className="register-form">
-                                    <div className="logo">
-                                        <Link to="/"><img src="images/logo.png" alt="image"/></Link>
-                                    </div>
-                                    <h4>Register your Account now</h4>
-                                    {regSuccess ? (<p style={{color:'#ec268f'}}>Your Account Has been successfully created. <button className='btn'  style={{color:'#ec268f'}} onClick={()=>history.push('/login')}>Click here Login</button></p>) : ( <p>Already signed up? <Link to="/login">Log in</Link></p>)}
-                                   
-
-                                    <form onSubmit={register}>
-                                    <div className="form-group">
-                                            <input type="input" name="name" id="name" placeholder="Fullname" className="form-control" required/>
-                                        </div>
-                                        <div className="form-group">
-                                            <input type="input" name="phone" id="phone" placeholder="Phone Number" className="form-control" required/>
-                                        </div>
-                                        <div className="form-group">
-                                            <input type="email" name="email" id="email" placeholder="Your email address" className="form-control" required/>
-                                        </div>
-
-                                        <div className="form-group">
-                                            <input type="password" name="password" id="password" placeholder="Create a password" className="form-control" required/>
-                                        </div>
-
-                                        <button type="submit" disabled={loading}>Sign Up</button>
-
-                                    </form>
-                                </div>
+        <section class="signup pt-105 pb-120 gray-bg">
+            <div class="container">
+                <div class="col-md-8 offset-md-2">
+                    <div class="signup-content">
+                        <form onSubmit={register} class="signup-form">
+                            <h3 class="form-title pb-20">Create account</h3>
+                            <div class="form-group">
+                                <input type="text" class="form-input" required name="name" id="name" placeholder="Your Name"/>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <input type="email" class="form-input" required name="email" id="email" placeholder="Your Email"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-input" required name="password" id="password" placeholder="Password"/>
+                                <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-input" required name="re_password" id="re_password"  placeholder="Repeat your password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span> I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" name="submit" id="submit" class="main-btn register-submit" value="Sign up"/>
+                            </div>
+                        </form>
+                        <p class="loginhere">
+                            Have already an account ? <a href="/login" class="loginhere-link">Login here</a>
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
-        );
+       );
 
 }
 

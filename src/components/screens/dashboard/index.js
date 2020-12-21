@@ -13,76 +13,209 @@ function Dashboard(){
     return(
         <Fragment>
             <Header/>
-            <DashboardBanner 
-            name
-            />
-              <div className='container'>
-                <div className='row mb-30'>
-                  <h5> Continue Trainings</h5>  
-                  <div className="dline"/>
-                  <div className='col-md-3 '>
-                    <Link className='anchor' to='/lesson'>
-                      <div className='inProgress'>
-                        <img src='images/courses/more.png'/>
-                          <h5>Discovery Package</h5>
-                          <div class="meter animate">
-                            <span style={{width: "3%"}}></span>
-                          </div>
-                      </div> 
-                    </Link>
+            <section class="gray-bg">
+              <div class="pt-105 pb-120">
+                  <div class="container">
+                      <div class="col-md-12 mx-auto">
+                          <h4>Continue Trainings</h4>
+                          <div class="line1"></div>
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <Link to="training-single.html"><h6 class="card-title">Leadership: Practical Leadership Skills</h6></Link>
+                                        
+                                        <p>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-striped" role="progressbar" style={{ width: "10%" }} aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </p>
+                                        </div>
+                                        <img class="card-img-bottom" src="images/t1.jpg" alt="Card image cap" />
+                                    </div>
+                                </div>
+
+
+                                <div class="col-lg-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <Link to="training-single.html"><h6 class="card-title">Leadership: Practical Leadership Skills</h6></Link>
+                                        <p>
+                                            <div class="progress">
+                                                <div class="progress-bar progress-bar-striped" role="progressbar" style={{ width: "30%" }} aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                        </p>
+                                        </div>
+                                        <img class="card-img-bottom" src="images/t2.jpg" alt="Card image cap" />
+                                    </div>
+                                </div>                            
+                            </div>
+
+                      </div>
+                      
                   </div>
-                </div>
+              </div>
 
-                <div className='row mb-30 '>
-                  <h5>Coaching Packages</h5>
-                  <div className="brk"/>
-                      <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-featured-box">
-                                    <div class="icon">
-                                        <i class="fa fa-clipboard-list"></i>
-                                    </div>
-                                    <h3 class="playfair-display">Discovery Package</h3>
-                                    <p>The Discovery Package is tailored made exclusively for those seeking to discover, define and deploy their purpose.</p>
-                                    <Link to="/discovery" class="link-btn">Start Now</Link>
+
+              <div class="pt-50">
+                  <div class="container">
+                  <h4>Coaching Packages</h4>
+
+                      <div class="line1"></div>     
+
+                        <div class="row no-gutters">
+                            <div class="col-lg-6">
+                                <div class="apply-cont apply-color-3 p-4 m-0 mr-2">
+                                    <h4>Discovery Package</h4>
+                                    <div class="dline my-3"></div>
+                                    <p>
+                                        This is tailored made exclusively for those seeking to discover, define and deploy their purpose. Knowledge, activities and tasks in the Discovery Package will jumpstart your journey to discovery, confidence and beginning steps to fulfilment. 
+                                    </p>
+                                    <Link to="/discovery" class="main-btn-3">Select</Link>
                                 </div>
                             </div>
+                            <div class="col-lg-6">
+                                <div class="apply-cont apply-color-3 p-4 m-0 ml-2">
+                                    <h4>Vantage Package</h4>
+                                    <div class="dline my-3"></div>
+                                    <p>For those who may have had some degree of certainty in their discovery of purpose will quickly embrace the Vantage Package. This package helps to achieve better clarity in the deployment of purpose</p>
+                                    <Link to="/vantage" class="main-btn-3">Select</Link>
+                                </div> 
+                            </div> 
+                          </div>
 
-                      <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="single-featured-box">
-                                    <div class="icon">
-                                        <i class="fa fa-ankh"></i>
-                                    </div>
-                                    <h3 class="playfair-display">Vantage Package</h3>
-                                    <p>This is for those who may have had some degree of certainty in their discovery of purpose will quickly embrace the Package.</p>
-                                    <Link to="/vantage" class="link-btn">Start Now</Link>
-                                </div>
-                            </div>
+                  </div>
+              </div>
 
-                      <div class="col-lg-4 col-md-6 col-sm-6 offset-lg-0 offset-md-3 offset-sm-3">
-                            <div class="single-featured-box">
-                                <div class="icon">
-                                    <i class="fa fa-accusoft"></i>
-                                </div>
-                                <h3 class="playfair-display">Executive Edge</h3>
-                                <p>This is a premium package that offers a continuous development programs & coaching for top executives, businesspersons, and leaders.</p>
-                                <Link to="/executive" class="link-btn">Start Now</Link>
-                            </div>
-                        </div>
-                    
-                </div>
 
-                <div className='row'>
-                <h5>Trainings <Link to="/trainings" className="lik">View All</Link></h5>  
-                        <div className="dline"/>
-                        <div className="row mt-5">
-                        <Book source="images/courses/lap.jpg" title="Straight Business: for business managers & Leaders"  id={6} quantity={1}/>
-                            <Book source="images/courses/9.jpg" title="The Complete Communication Skills Master className for Life"  id={2} quantity={1}/>
-                            <Book source="images/courses/book.jpeg" title="The Complete Management Skills Certification Course"  id={7} quantity={1}/>
-                            <Book source="images/courses/16.jpg" title="Leadership: Practical Leadership Skills"  id={5} quantity={1}/>
-                        </div>
-                </div>
+
+              <div class="container pb-90">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="related-courses pt-95">
+                              <div class="title">
+                                  <h4>More trainings</h4>
+                              </div>
+                              <div class="row">
+
+
+                                  <div class="col-md-3">
+                                      <div class="single-course mt-30">
+                                          <div class="thum">
+                                              <div class="image">
+                                                  <img src="images/t3.jpg" alt="Course" />
+                                              </div>
+                                          </div>
+                                          <div class="cont">
+                                              <Link to="courses-single.html"><h6>Learn basic javascript from start for beginner</h6></Link>
+                                              <div class="course-teacher">
+                                                  <div class="thum">
+                                                      <Link to="#"><img src="images/usr.jpg" alt="teacher"/></Link>
+                                                  </div>
+                                                  <div class="name">
+                                                      <Link to="#"><h6 class="x10">Yemi Akinwuntan</h6></Link>
+                                                  </div>
+                                                  <div class="admin">
+                                                      <ul>
+                                                          <li><Link to="#"><i class="fa fa-user"></i><span>31</span></Link></li>
+                                                      </ul>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div> 
+                                  </div>
+
+
+                                  <div class="col-md-3">
+                                      <div class="single-course mt-30">
+                                          <div class="thum">
+                                              <div class="image">
+                                                  <img src="images/t2.jpg" alt="Course"/>
+                                              </div>
+                                          </div>
+                                          <div class="cont">
+                                              <Link to="courses-single.html"><h6>New Manager Training in Essential Skills</h6></Link>
+                                              <div class="course-teacher">
+                                                  <div class="thum">
+                                                      <Link to="#"><img src="images/usr.jpg" alt="teacher"/></Link>
+                                                  </div>
+                                                  <div class="name">
+                                                      <Link to="#"><h6 class="x10">Yemi Akinwuntan</h6></Link>
+                                                  </div>
+                                                  <div class="admin">
+                                                      <ul>
+                                                          <li><Link to="#"><i class="fa fa-user"></i><span>31</span></Link></li>
+                                                      </ul>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div> 
+                                  </div>
+
+
+
+                                  <div class="col-md-3">
+                                      <div class="single-course mt-30">
+                                          <div class="thum">
+                                              <div class="image">
+                                                  <img src="images/t3.jpg" alt="Course" />
+                                              </div>
+                                          </div>
+                                          <div class="cont">
+                                              <Link to="courses-single.html"><h6>New Manager Training in Essential Skills</h6></Link>
+                                              <div class="course-teacher">
+                                                  <div class="thum">
+                                                      <Link to="#"><img src="images/usr.jpg" alt="teacher"/></Link>
+                                                  </div>
+                                                  <div class="name">
+                                                      <Link to="#"><h6 class="x10">Yemi Akinwuntan</h6></Link>
+                                                  </div>
+                                                  <div class="admin">
+                                                      <ul>
+                                                          <li><Link to="#"><i class="fa fa-user"></i><span>31</span></Link></li>
+                                                      </ul>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div> 
+                                  </div>         
+                                  
+                                  
+                                  <div class="col-md-3">
+                                      <div class="single-course mt-30">
+                                          <div class="thum">
+                                              <div class="image">
+                                                  <img src="images/t1.jpg" alt="Course" />
+                                              </div>
+                                          </div>
+                                          <div class="cont">
+                                              <Link to="courses-single.html"><h6>New Manager Training in Essential Skills</h6></Link>
+                                              <div class="course-teacher">
+                                                  <div class="thum">
+                                                      <Link to="#"><img src="images/usr.jpg" alt="teacher" /></Link>
+                                                  </div>
+                                                  <div class="name">
+                                                      <Link to="#"><h6 class="x10">Yemi Akinwuntan</h6></Link>
+                                                  </div>
+                                                  <div class="admin">
+                                                      <ul>
+                                                          <li><Link to="#"><i class="fa fa-user"></i><span>31</span></Link></li>
+                                                      </ul>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>                        
+
+
+                              </div> 
+                          </div> 
+                      </div>
+                  </div> 
 
               </div>
+
+              </section>
 
             <Footer/>
         </Fragment>

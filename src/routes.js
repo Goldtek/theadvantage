@@ -5,20 +5,19 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 
 import {
   Home,
-  Courses,
+  Trainings,
   Login,
   // Error404Page,
   SignUp,
   Coaching,
   Discovery,
   Books,
-  BookDetail,
   Dashboard,
   Lesson, 
   Checkout,
   Vantage,
   Cart,
-  EventDetail,
+  Events,
   Executive
  
 } from "./components/index";
@@ -36,7 +35,7 @@ const Routes = () => {
        
 
         <Route exact path="/trainings">
-          <Courses />
+          <Trainings />
         </Route>
 
         <Route path="/login">
@@ -68,14 +67,13 @@ const Routes = () => {
           <Books />
         </Route>
 
-        <Route path="/book-details" component={BookDetail} />
         
         <Route path="/checkout" component={Checkout} />
         <Route path="/cart" component={Cart} />
 
         <Route path="/training-detail" component={CourseDetail} />
 
-        <Route path="/event-detail" component={EventDetail} />
+        <Route path="/events" component={Events} />
 
         <Route exact path="/">
         <Home />
@@ -89,9 +87,9 @@ const Routes = () => {
 
         {/* PROTECTED ROUTES START HERE #############################################*/}
         
-        <Route user={user} exact path="/dashboard" component={Dashboard} />
+        <PrivateRoute user={user} exact path="/dashboard" component={Dashboard} />
 
-        <Route exact path="/lesson" component={Lesson} />
+        <PrivateRoute exact path="/lesson" component={Lesson} />
 
         {/* <PrivateRoute
           user={(user != null) ? true : false}

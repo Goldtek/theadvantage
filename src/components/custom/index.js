@@ -3,7 +3,7 @@ import Header from "./header";
 import Footer from "./footer";
 import Book from "./book";
 import CourseBanner from "./course-banner";
-import Course from "./course";
+import Training from "./Training";
 import Package from "./package";
 import Pagination from './pagination';
 import history from './history';
@@ -13,6 +13,7 @@ import VantagePackage from './vantagePackage';
 import CourseDetail from './course-detail';
 import ActualBook from './actual-book';
 import ExecutivePackage from './executivePackage';
+import Event from './event';
 
 export {
     Banner,
@@ -20,7 +21,7 @@ export {
     Header,
     Book,
     CourseBanner,
-    Course,
+    Training,
     Package,
     Pagination,
     history,
@@ -29,5 +30,6 @@ export {
     VantagePackage,
     CourseDetail,
     ActualBook,
-    ExecutivePackage
+    ExecutivePackage,
+    Event
 };
