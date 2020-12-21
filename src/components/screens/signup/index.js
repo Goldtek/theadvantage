@@ -3,7 +3,6 @@ import { Link,useHistory } from 'react-router-dom';
 import serializeForm from "form-serialize";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import swal from 'sweetalert';
 import { auth,firestore }  from '../../custom/firebase';
 
 const SignUp = () => {
