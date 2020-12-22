@@ -5,33 +5,31 @@ import Tolearn from '../tolearn';
 import CourseInfo from '../course-info';
 import Footer from '../footer';
 import Header from '../header';
-import CourseBanner from '../course-banner';
+import TrainingInfo from '../course-info';
 import { addItemToCart,removeItemFromCart } from '../../actions/cart';
 
 
 const text = "Lorem Ipsum Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain,Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat nunc nec nisi rutrum, sed interdum metus mattis. Vestibulum id felis vulputate, elementum lorem vitae, suscipit eros. Suspendisse vitae pulvinar dolor. Etiam tellus purus, luctus at porttitor nec, bibendum elementum mauris. Aenean ipsum lectus, suscipit nec auctor et, tincidunt vitae justo. Duis gravida velit et dolor eleifend, at pretium nulla cursus. Fusce bibendum, dui in vehicula euismod, odio nulla euismod nulla, sodales volutpat elit libero non odio. Maecenas urna metus, pulvinar ultricies velit a, hendrerit aliquam urna.";
 
 
-const CourseDetail = ({price, name,  level, duration, numOfVideo, numOfLessons,  videos, Image,id,quantity }) => {
+const CourseDetail = ({price, name, Image: bookImg, id,numOfLessons, category, duration, numOfVideo,quantity , quizz, students, author, userImg}) => {
     const dispatch = useDispatch();
     const history =   useHistory();
 
-    const  add = cartItem => {
+    const add = cartItem => {
         try{
              dispatch(addItemToCart(cartItem));
              history.push('/cart')
         } catch(error){
             console.log(error);
         }
-
     }
 
     return (
         <Fragment>
             <Header/>
-            <CourseBanner
-                title={name}
-                subTitle=""
+            <TrainingInfo
+                name={name}
             /> 
              <section id="courses-single" class="pt-90 pb-120 gray-bg">
                 <div class="container">
@@ -39,25 +37,25 @@ const CourseDetail = ({price, name,  level, duration, numOfVideo, numOfLessons, 
                         <div class="col-lg-8">
                             <div class="courses-single-left mt-30">
                                 <div class="title">
-                                    <h3>Leadership: Practical Leadership Skills</h3>
+                                    <h3>{name} </h3>
                                 </div> 
                                 <div class="course-terms">
                                     <ul>
                                         <li>
                                             <div class="teacher-name">
                                                 <div class="thum">
-                                                    <img src="images/usr.jpg" alt="Teacher" />
+                                                    <img src={userImg} alt="Teacher" />
                                                 </div>
                                                 <div class="name">
                                                     <span>Teacher</span>
-                                                    <h6>Mark anthem</h6>
+                                                    <h6>{author}</h6>
                                                 </div>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="course-category">
                                                 <span>Category</span>
-                                                <h6>Personal Edge </h6>
+                                                <h6>{category} </h6>
                                             </div>
                                         </li>
 
@@ -65,7 +63,7 @@ const CourseDetail = ({price, name,  level, duration, numOfVideo, numOfLessons, 
                                 </div>
                                 
                                 <div class="courses-single-image pt-50">
-                                    <img src="images/t1.jpg" alt="Courses" />
+                                    <img src={bookImg} alt="Courses" />
                                 </div> 
                                 
                                 <div class="courses-tab mt-30">
@@ -265,18 +263,18 @@ const CourseDetail = ({price, name,  level, duration, numOfVideo, numOfLessons, 
                                     <div class="course-features mt-30">
                                     <h4>Course Features </h4>
                                         <ul>
-                                            <li><i class="fa fa-clock-o"></i>Duaration : <span>10 Hours</span></li>
-                                            <li><i class="fa fa-clone"></i>Leactures : <span>09</span></li>
-                                            <li><i class="fa fa-beer"></i>Quizzes :  <span>05</span></li>
-                                            <li><i class="fa fa-user-o"></i>Students :  <span>100</span></li>
+                                            <li><i class="fa fa-clock-o"></i>Duaration : <span>{duration} Hours</span></li>
+                                            <li><i class="fa fa-clone"></i>Leactures : <span>{numOfLessons}</span></li>
+                                            <li><i class="fa fa-beer"></i>Quizzes :  <span>{quizz}</span></li>
+                                            <li><i class="fa fa-user-o"></i>Students :  <span>{students}</span></li>
                                         </ul>
                                         <div class="price-button pt-10">
-                                            <span>Price : <b>$25</b></span>
+                                            <span>Price : <b>${price}</b></span>
                                             <Link to="#" class="main-btn">Enroll Now</Link>
                                         </div>
                                     </div> 
                                 </div>
-                                <div class="col-lg-12 col-md-6">
+                              {/*   <div class="col-lg-12 col-md-6">
                                     <div class="You-makelike mt-30">
                                         <h4>You make like </h4> 
                                         <div class="single-makelike mt-20">
@@ -316,7 +314,7 @@ const CourseDetail = ({price, name,  level, duration, numOfVideo, numOfLessons, 
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div> 
@@ -390,8 +388,8 @@ const CourseDetail = ({price, name,  level, duration, numOfVideo, numOfLessons, 
 
 }
 
-const mapStateToProps = ({ Course: {course:{ price, name,  level, duration, numOfVideo, numOfLessons,  videos, Image,id,quantity }}}) => ({
-     price, name,  level, duration, numOfVideo, numOfLessons,  videos, Image,id,quantity
+const mapStateToProps = ({ Course: {course:{ price, name, Image: bookImg, id,numOfLessons, category, duration, numOfVideo,quantity , quizz, students, author,userImg}}}) => ({
+    price, name, Image: bookImg, id,numOfLessons, category, duration, numOfVideo,quantity , quizz, students, author, userImg
   });
 
 const mapDispatchToProps = { addItemToCart,removeItemFromCart };

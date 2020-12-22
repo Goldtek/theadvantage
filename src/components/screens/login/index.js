@@ -20,7 +20,6 @@ function Login(){
         
         try{
         const res = await auth.signInWithEmailAndPassword(email, password);
-        // use the uid and fetch the user
         const { user: { uid } } = res;
         const doc = await firestore.collection('users').doc(uid).get();
         const user = doc.data();

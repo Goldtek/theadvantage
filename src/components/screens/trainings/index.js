@@ -56,16 +56,18 @@ function Trainings(){
                         </div> 
                         <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="courses-grid" role="tabpanel" aria-labelledby="courses-grid-tab">
-                                <div class="row">
-      
-                                <Training bookImg="images/t1.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="Leadership: Practical Leadership Skills" count={31} quantity={1} />
-                    
-                                <Training bookImg="images/t2.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="Leadership: Practical Leadership Skills" count={0} quantity={1}  />
-                                
-                                <Training bookImg="images/t3.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="Leadership: Practical Leadership Skills" count={23} quantity={1}  />
-                                    
-                                </div>
+                            <div class="row">
+        
+                            <Training bookImg="images/t1.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="Leadership: Practical Leadership Skills" count={31} quantity={1} numberOfLesson="20" price={25} id="asjwetrn" numOfVideo="50" quizz="10" students="20" />
+                            
+                            <Training bookImg="images/t2.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="Learn Basic Javascript" count={0} quantity={1} numberOfLesson="10" price={19} id="bdhyotrn" numOfVideo="20" quizz="5" students="2"/>
+                            
+                            <Training bookImg="images/t3.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="New Managerial Skills" count={23} quantity={1} numberOfLesson="40" price={20} id="aghetrn" numOfVideo="30" quizz="15" students="14"/>
+
+                            <Training bookImg="images/t4.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="Discovery your purpose" count={10} quantity={1} numberOfLesson="15" price={25} id="anahwetrn" numOfVideo="45" quizz="12" students="34"/>
+                        
                             </div>
+                        </div>
                             
                         </div>
                         <div class="row">

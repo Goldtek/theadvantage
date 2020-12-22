@@ -12,6 +12,8 @@ const Header = () => {
     const User = useSelector(state => state.User);
     const { cart:{ items } } = Cart;
     const { user, isAuthenticated } = User;
+    console.log('user', user);
+    console.log('isAuthenticated', isAuthenticated);
     const logout = () => {
         try{ 
             auth.signOut();
