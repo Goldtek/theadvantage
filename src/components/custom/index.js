@@ -15,6 +15,7 @@ import ActualBook from './actual-book';
 import ExecutivePackage from './executivePackage';
 import Event from './event';
 import TrainingInfo from './course-info';
+import EventDetail from './event-detail';
 
 export {
     Banner,
@@ -33,5 +34,6 @@ export {
     ActualBook,
     ExecutivePackage,
     Event,
-    TrainingInfo
+    TrainingInfo,
+    EventDetail,
 };

@@ -8,7 +8,6 @@ const Training = ({title, createdOn, numberOfLesson, userImg, bookImg,price,auth
     const dispatch = useDispatch();
     const history = useHistory();
 
-
     const viewCourse = async (e, course) => {
         e.preventDefault();
         dispatch ({ type: 'LOAD_COURSE_DETAIL', course});
