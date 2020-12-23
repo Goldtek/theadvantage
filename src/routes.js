@@ -18,11 +18,12 @@ import {
   Vantage,
   Cart,
   Events,
-  Executive
+  Executive,
+  
  
 } from "./components/index";
 
-import { PrivateRoute,CourseDetail } from './components/custom';
+import { PrivateRoute,CourseDetail, EventDetail } from './components/custom';
 
 
 const Routes = () => {
@@ -79,6 +80,10 @@ const Routes = () => {
         <Home />
         </Route>
 
+        <Route exact path="/event-detail">
+        <EventDetail />
+        </Route>
+
         {/* <Route path="/packages/vantage">
           <Vantage />
         </Route> */}
@@ -87,9 +92,9 @@ const Routes = () => {
 
         {/* PROTECTED ROUTES START HERE #############################################*/}
         
-        <PrivateRoute user={user} exact path="/dashboard" component={Dashboard} />
+        <Route user={user} exact path="/dashboard" component={Dashboard} />
 
-        <PrivateRoute exact path="/lesson" component={Lesson} />
+        <Route exact path="/lesson" component={Lesson} />
 
         {/* <PrivateRoute
           user={(user != null) ? true : false}

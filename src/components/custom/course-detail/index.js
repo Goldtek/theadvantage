@@ -16,7 +16,8 @@ const CourseDetail = ({price, name, Image: bookImg, id,numOfLessons, category, d
     const dispatch = useDispatch();
     const history =   useHistory();
 
-    const add = cartItem => {
+    const add = (e,cartItem) => {
+        e.preventDefault();
         try{
              dispatch(addItemToCart(cartItem));
              history.push('/cart')
@@ -30,6 +31,8 @@ const CourseDetail = ({price, name, Image: bookImg, id,numOfLessons, category, d
             <Header/>
             <TrainingInfo
                 name={name}
+                inner="Training"
+                image="./images/ban1.jpg"
             /> 
              <section id="courses-single" class="pt-90 pb-120 gray-bg">
                 <div class="container">
@@ -270,7 +273,7 @@ const CourseDetail = ({price, name, Image: bookImg, id,numOfLessons, category, d
                                         </ul>
                                         <div class="price-button pt-10">
                                             <span>Price : <b>${price}</b></span>
-                                            <Link to="#" class="main-btn">Enroll Now</Link>
+                                            <Link onClick={(e)=> add(e,{price, name, image: bookImg, id,numOfLessons, category, duration, numOfVideo,quantity , quizz, students, author, userImg})} class="main-btn">Enroll Now</Link>
                                         </div>
                                     </div> 
                                 </div>

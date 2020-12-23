@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 
-const CourseInfo = ({name}) => (
-    <section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style={{backgroundImage : "url('images/ban1.jpg')"}}>
+const CourseInfo = ({name, inner, image}) => (
+    <section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style={{backgroundImage : `url(${image})`}}>
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -10,7 +10,7 @@ const CourseInfo = ({name}) => (
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Training</a></li>
+                            <li class="breadcrumb-item"><a href="#">{inner}</a></li>
                             <li class="breadcrumb-item active" aria-current="page">{name}</li>
                         </ol>
                     </nav>

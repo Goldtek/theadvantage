@@ -5,26 +5,26 @@ import { useDispatch } from 'react-redux';
 
 
 function Trainings(){
-    const [trainings, setTrainings] = useState([]);
+    const [trainings, setTrainings] = useState([{},{},{},{}]);
     const [currPage, setCurrPage] = useState(1);
-    const [booksPerPage] = useState(2);
+    const [trainingsPerPage] = useState(6);
 
     
-  //GET CURRENT POST
-  const indexOfLastEvent = currPage * booksPerPage;
-  const indexOfFirstEvent = indexOfLastEvent - booksPerPage;
-  const currBooks = trainings.slice(indexOfFirstEvent, indexOfLastEvent);
-  //GET CURRENT POST
+    //GET CURRENT POST
+    const indexOfLastEvent = currPage * trainingsPerPage;
+    const indexOfFirstEvent = indexOfLastEvent - trainingsPerPage;
+    const curTrainings = trainings.slice(indexOfFirstEvent, indexOfLastEvent);
+    //use currtrainig to display the current paginigated array elements
 
-  //CHANGE PAGE
-  const paginate = pageNumber => setCurrPage(pageNumber);
-  //CHANGE PAGE
+    //CHANGE PAGE
+    const paginate = pageNumber => setCurrPage(pageNumber);
+    //CHANGE PAGE
+    console.log('page',paginate)
 
-  const dispatch = useDispatch();
-  const history = useHistory();
+    const dispatch = useDispatch();
+    const history = useHistory();
 
  
-
   
         return(
             <div>
@@ -64,7 +64,7 @@ function Trainings(){
                             
                             <Training bookImg="images/t3.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="New Managerial Skills" count={23} quantity={1} numberOfLesson="40" price={20} id="aghetrn" numOfVideo="30" quizz="15" students="14"/>
 
-                            <Training bookImg="images/t4.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="Discovery your purpose" count={10} quantity={1} numberOfLesson="15" price={25} id="anahwetrn" numOfVideo="45" quizz="12" students="34"/>
+                            <Training bookImg="images/t4.jpg" userImg="images/usr.jpg" author="Yemi Akinwuntan"  title="Discover your purpose" count={10} quantity={1} numberOfLesson="15" price={25} id="anahwetrn" numOfVideo="45" quizz="12" students="34"/>
                         
                             </div>
                         </div>
@@ -72,34 +72,16 @@ function Trainings(){
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <nav class="courses-pagination mt-50">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item">
-                                            <Link to="#" aria-label="Previous">
-                                                <i class="fa fa-angle-left"></i>
-                                            </Link>
-                                        </li>
-                                        <li class="page-item"><Link class="active" href="#">1</Link></li>
-                                        <li class="page-item"><Link to="#">2</Link></li>
-                                        <li class="page-item"><Link to="#">3</Link></li>
-                                        <li class="page-item">
-                                            <Link to="#" aria-label="Next">
-                                                <i class="fa fa-angle-right"></i>
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </nav>  
+                                <Pagination
+                                    PerPage={trainingsPerPage}
+                                    total={trainings.length}
+                                    paginate={paginate}
+                                />
                             </div>
                         </div> 
                     </div> 
                 </section>
-
-                     {/* <Pagination
-                            PerPage={booksPerPage}
-                            total={books.length}
-                            paginate={paginate}
-                        /> */}
-                    
+      
                 <Footer/>
             </div>
         );

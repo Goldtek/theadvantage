@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import {Link } from 'react-router-dom';
 
 const Pagination = ({ PerPage, total, paginate }) => {
   const pageNumbers = [];
@@ -8,30 +9,36 @@ const Pagination = ({ PerPage, total, paginate }) => {
   }
   return (
     <Fragment>
-        <nav aria-label="Page navigation example">
-        <ul className="pagination justify-content-end">
-        <li className="page-item disabled">
-            <a className="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        <nav class="courses-pagination mt-50">
+        <ul className="pagination justify-content-center">
+        <li class="page-item">
+            <Link  to="#" aria-label="Previous">
+                <i class="fa fa-angle-left"></i>
+            </Link >
         </li>
         {pageNumbers.map(number => (
             <li className="page-item">
-                <a 
-                className="page-link"
-                href="#"
+                <Link   
+                to="#"
                 style={{ cursor: "pointer" }}
                 onClick={() => paginate(number)}
                 >
                 {number}
-                </a>
+                </Link>
             </li>
-
         ))} 
+        <li class="page-item">
+          <Link  to="#" aria-label="Next">
+              <i class="fa fa-angle-right"></i>
+          </Link>
+        </li>
         
         </ul>
         </nav>
     </Fragment>
   );
 };
+
 
 export default Pagination;
 

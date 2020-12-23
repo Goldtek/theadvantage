@@ -14,7 +14,8 @@ const Header = () => {
     const { user, isAuthenticated } = User;
     console.log('user', user);
     console.log('isAuthenticated', isAuthenticated);
-    const logout = () => {
+    const logout = (e) => {
+        e.preventDefault();
         try{ 
             auth.signOut();
             dispatch({ type: 'LOG_OUT' });
@@ -76,9 +77,17 @@ const Header = () => {
                                                     </li>
                                                 </Fragment>
                                             ) : (
+                                                <Fragment>
                                                 <li className="nav-item">
                                                     <Link className="active" to="/dashboard"> Dashboard </Link>
                                                 </li>
+                                                <li class="nav-item">
+                                                <Link>HI, {user.name} <i class="fa fa-user colr"></i></Link>
+                                                </li>
+                                                <li className="nav-item">
+                                                        <Link onClick={(e)=> logout(e)}>Logout</Link>
+                                                    </li>
+                                                </Fragment>
                                             )}
                                         </ul>
                                     </div>

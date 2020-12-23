@@ -25,16 +25,12 @@ function Checkout(props){
             <div class="container">
                 <div class="col-md-12 mx-auto">
                     <div class="cover">
-                        Returning customer? <a href="#">Click here to login</a>
+                        Returning customer? <Link href="#">Click here to login</Link>
                         <div class="line"></div>
 
                         <form method="POST">
                         <div class="row">
-    
-
-                            <div class="col-md-6">
-
-                                
+                            <div class="col-md-6">     
                                     <h6 class="mb-10 mt-15">Billing Details</h6>
 
                                     <div class="form-group">
@@ -89,7 +85,7 @@ function Checkout(props){
                                             {props.items.map((item) => (
                                             <tr>
                                                 <td class="product-name">
-                                                    <a href="#" class="clor">{item.name}</a>
+                                                    <Link to="#" class="clor">{item.name}</Link>
                                                 </td>
                                                 <td class="product-total"><span class="subtotal-amount">${item.price}</span></td>
                                             </tr>
@@ -105,12 +101,12 @@ function Checkout(props){
                             <div class="cover2 c2pd w-100">
                                 <div class="payment-method">
                                     <p>
-                                        <input type="radio" id="paypal" name="radio-group" checked=""/>
-                                        <label for="paypal"><img src="images/paypal.png" width="55" /></label>
+                                        <input type="radio" id="paypal" name="radio-group" checked=""/> {" "}
+                                        <label for="paypal"><img src="images/paypal.png" width="55" alt="" /></label>
                                     </p>
                                     
-                                    <p><input type="radio" id="cash-on-delivery" name="radio-group"/>
-                                        <label for="cash-on-delivery"> <img src="images/stripe.png" width="45" /> </label>
+                                    <p><input type="radio" id="cash-on-delivery" name="radio-group"/> {" "}
+                                        <label for="cash-on-delivery"> <img src="images/stripe.png" width="45" alt="" /> </label>
                                     </p>
                                 </div>
                                 <div class="line"></div>

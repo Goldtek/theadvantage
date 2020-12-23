@@ -5,11 +5,9 @@ import { useDispatch } from 'react-redux';
 
 
 function Books(){
-    const [books,setBooks] = useState([{id:'dfrth78kkj', title: 'Purpose: why some live it others dont', author: 'Yemi Akinwuntan', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.  blanditiis ex fugiat.', image: 'images/books/pg.jpg',price:300}, 
-    {id:'34rth78qj', title: 'Straight Business: for business managers & Leaders', author: 'Yemi Akinwuntan', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.  blanditiis ex fugiat.', image: 'images/books/pg1.jpg',price:100},
-    {id:'34rrth8qj', title: 'Leadership: Practical Leadership Skills', author: 'Yemi Akinwuntan', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.  blanditiis ex fugiat.', image: 'images/books/ld.jpg',price:200}]);
+    const [books,setBooks] = useState([{},{},{},{}]);
     const [currPage, setCurrPage] = useState(1);
-    const [booksPerPage] = useState(2);
+    const [booksPerPage] = useState(4);
 
     
   //GET CURRENT POST
@@ -222,33 +220,15 @@ function Books(){
                         </div> 
                         <div class="row">
                             <div class="col-lg-12">
-                                <nav class="courses-pagination mt-50">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item">
-                                            <Link  href="#" aria-label="Previous">
-                                                <i class="fa fa-angle-left"></i>
-                                            </Link >
-                                        </li>
-                                        <li class="page-item"><Link  class="active" href="#">1</Link ></li>
-                                        <li class="page-item"><Link  href="#">2</Link ></li>
-                                        <li class="page-item"><Link  href="#">3</Link ></li>
-                                        <li class="page-item">
-                                            <Link  href="#" aria-label="Next">
-                                                <i class="fa fa-angle-right"></i>
-                                            </Link >
-                                        </li>
-                                    </ul>
-                                </nav>
+                                <Pagination
+                                    PerPage={booksPerPage}
+                                    total={books.length}
+                                    paginate={paginate}
+                                />
                             </div>
                         </div>
                     </div> 
-                </section>
-                        {/* <Pagination
-                            PerPage={booksPerPage}
-                            total={books.length}
-                            paginate={paginate}
-                        /> */}
-                    
+                </section>           
                 <Footer/>
             </div>
         );

@@ -1,13 +1,33 @@
 import  React,{ useState, useEffect, Fragment } from 'react';
-import { Link } from 'react-router-dom';
+import { Link , useHistory} from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import { Header, DashboardBanner, Footer, Book } from '../../custom';
+import { auth, firestore } from "../../custom/firebase"
 import './style.css';
 
 function Dashboard(){
+    const history = useHistory();
+    const User = useSelector(state => state.User);
+    const { isAuthenticated, user } = User;
 
     useEffect(()=>{
+        auth.onAuthStateChanged(async (user)=>{
+            if(user){
+               const docs = await firestore.collection('users').doc(user.uid).get();
+                const data = docs.data();
+                const { name } = data;
+            
+            }else{
+                history.push('/');
+            }
+        });
+    });
 
-    },[]);
+    const checkUser = () => {
+        if(!isAuthenticated) {
+            history.push('/');
+        }
+    }
 
         
     return(

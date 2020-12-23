@@ -7,9 +7,9 @@ const Event = ({address, startTime, endTime, image, dateOfEvent, venue, descript
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const ViewEvent = async (e, course) => {
+    const ViewEvent = async (e, event) => {
         e.preventDefault();
-        dispatch ({ type: 'LOAD_EVENT_DETAIL', course});
+        dispatch ({ type: 'LOAD_EVENT_DETAIL', event});
         history.push('/event-detail');
     }
 
